@@ -1,5 +1,11 @@
 services:
+    print-ipv4:
+      image: busybox
+      environment:
+        - IPV4_NETWORK
+      command: /bin/sh -c "echo IPV4_NETWORK is $IPV4_NETWORK"
 
+    
     unbound-mailcow:
       image: ghcr.io/mailcow/unbound:1.24
       environment:
